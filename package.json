@@ -1,0 +1,20 @@
+{
+  "name": "js-fundamentals-1",
+  "version": "1.0.0",
+  "description": "JavaScript equivalent of the apprentice boot camp fundamentals 1",
+  "main": "cards/cards.js",
+  "engines": {
+    "node": ">=11.14"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest test --notify"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
