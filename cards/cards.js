@@ -87,8 +87,7 @@ class Deck {
       for (let value = 0; value < 13; value++) {
         const newCard = new Card(value, suit);
         //  this.cards[suit * 13 + faceValue] = newCard;
-        //or
-       
+      
         this.cards.push(newCard);
         
       }
@@ -117,10 +116,10 @@ class Deck {
     return this.cards;
   }
 
+
   deal() {
     let card = this.cards.splice(0, 1)[0];
-    // console.log(this.cards)
-    // console.log(card)
+    console.log(card) // returns object  Card { value: 4, suit: 3 }
     return card;
 
   };

@@ -44,7 +44,7 @@ AnimalDeck.prototype.deal = function () {
   let card = this.cards.splice(0, 1)[0]; 
   // console.log(this.cards)
   // console.log(card)
-  return card; //returns an array of one element - the card dealt from the cards array which is an object:  AnimalCard { animal: 'NEWT' } (card.animal)
+  return card; 
 };
 
 
