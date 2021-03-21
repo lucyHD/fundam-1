@@ -2,10 +2,10 @@ const { Card, Deck } = require('../../cards/cards.js');
 
 describe('Card', function () {
   test('when card is snapped, show true or false', function () {
-    let previousCard = new Card (13, "hearts")
+    let previousCard = new Card (2, "hearts")
     let currentCard = new Card(2, "diamonds");
     
-    expect(currentCard.snap(previousCard)).toEqual(false)
+    expect(currentCard.snap(previousCard)).toEqual(true)
   })
 
 });

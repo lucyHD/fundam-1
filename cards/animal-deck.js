@@ -6,9 +6,9 @@ const { AnimalCard } = require('./animal-card.js');
 let AnimalDeck = class AnimalDeck {
   constructor() {
     this.cards = [];
-    for (let animal in animals) {
-      this.cards.push(new AnimalCard(animal));
-      this.cards.push(new AnimalCard(animal));
+    for (let value in animals) {
+      this.cards.push(new AnimalCard(value));
+      this.cards.push(new AnimalCard(value));
     }
   }
 };
@@ -42,9 +42,12 @@ AnimalDeck.prototype.shuffle = function () {
 
 AnimalDeck.prototype.deal = function () {
   let card = this.cards.splice(0, 1)[0]; 
+  // console.log(this.cards)
   // console.log(card)
   return card; //returns an array of one element - the card dealt from the cards array which is an object:  AnimalCard { animal: 'NEWT' } (card.animal)
 };
+
+
 
 
 module.exports = {

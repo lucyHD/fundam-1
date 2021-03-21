@@ -6,8 +6,8 @@
 //command D +-
 
 class Card {
-  constructor(faceValue, suit) {
-    this.faceValue = faceValue; //0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+  constructor(value, suit) {
+    this.value = value; //0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
     this.suit = suit; //0 (clubs), 1 (diamonds), 2 (hearts), 3 (spades)
   }
 
@@ -15,7 +15,7 @@ class Card {
     let cardNumber = 0;
 
     let faceValueName;
-    switch (this.faceValue) {
+    switch (this.value) {
       case 0:
         faceValueName = "ace";
         break;
@@ -28,7 +28,7 @@ class Card {
       case 7:
       case 8:
       case 9:
-        faceValueName = (this.faceValue + 1).toString();
+        faceValueName = (this.value + 1).toString();
         break;
       case 10:
         faceValueName = "jack";
@@ -42,7 +42,7 @@ class Card {
       default:
         throw new Error(
           "Something went wrong " +
-            this.faceValue +
+            this.value +
             " is not a valid faceValue!"
         );
     }
@@ -72,9 +72,8 @@ class Card {
 
   
   snap(previousCard) {
-    console.log(previousCard);
-    console.log(this.faceValue)
-    return (  previousCard.faceValue === this.faceValue)   
+    
+    return (  previousCard.value === this.value)   
 
   }
   
@@ -85,11 +84,13 @@ class Deck {
     this.cards = []; //empty array of cards
     // this.suits = [0, 1, 2, 3];
     for (let suit = 0; suit < 4; suit++) {
-      for (let faceValue = 0; faceValue < 13; faceValue++) {
-        const newCard = new Card(faceValue, suit);
+      for (let value = 0; value < 13; value++) {
+        const newCard = new Card(value, suit);
         //  this.cards[suit * 13 + faceValue] = newCard;
         //or
+       
         this.cards.push(newCard.getFormattedCard());
+        
       }
     }
   }
@@ -115,17 +116,20 @@ class Deck {
 
   deal() {
     let card = this.cards.splice(0, 1)[0];
+    // console.log(this.cards)
+    // console.log(card)
     return card;
+
   };
 }
 
 // const exampleDeck = new Deck();
 // console.log(exampleDeck.createCardDeck());
 
-const exampleShuffledDeck = new Deck();
-// console.log(exampleShuffledDeck.shuffle());
-exampleShuffledDeck.shuffle();
-console.log(exampleShuffledDeck.deal());
+// const exampleShuffledDeck = new Deck();
+// // console.log(exampleShuffledDeck.shuffle());
+// exampleShuffledDeck.shuffle();
+// console.log(exampleShuffledDeck.deal());
 
 // const exampleCard = new Card("hearts", 6);
 
