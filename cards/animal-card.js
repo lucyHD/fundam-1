@@ -1,16 +1,16 @@
 class AnimalCard {
-  constructor(animal) {
-    this.animal = animal;
+  constructor(value) {
+    this.value = value;
   }
 
   //checks if cards are a match and returns true or false 
   snap(otherCard) {
-    return (otherCard) && this.animal === otherCard.animal;
+    return (otherCard) && this.value === otherCard.value;
   }
 
   //same as getFormattedCard()
   toString() {
-    return this.animal.toString();
+    return this.value.toString();
   }
 };
 

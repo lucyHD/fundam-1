@@ -1,5 +1,5 @@
-const {AnimalDeck} = require('./animal-deck.js');
-// const {CardsDeck} = require('./cards.js');  //this produces console.log of 'ace of hearts' or other card
+// const {AnimalDeck} = require('./animal-deck.js');
+const {CardsDeck} = require('./cards.js');  //this produces console.log of 'ace of hearts' or other card
 const readline = require('readline');
 
 // to execute the runnable code in this file, use the command
@@ -22,21 +22,19 @@ Snap.prototype.play = async function () {
   let previousCard = null;
 
   while (this.deck.getCards().length > 0) {
-    console.log(this.deck.getCards().length) //this should return 52 
     let rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout,
       prompt: 'play snap> '
     });
     rl.prompt();
-    currentCard = this.deck.deal(); //shows that currentCard is actually equal to the the card extracted from the deck, which is actually a card from animal-card
-    console.log(currentCard.animal); //changed animal deck deal to return card.animal
+    currentCard = this.deck.deal(); 
+    console.log(currentCard.value); //changed animal deck deal to return card.animal
 
 
     for await (let line of rl) {
       if (line.length > 0 && line.charAt(0).toLowerCase() === 'a') {
-        if (currentCard.snap(previousCard)) { //this is the problem because it's trying to do
-        //currentCard.animal.snap - which doesn't exisit 
+        if (currentCard.snap(previousCard)) { 
           console.log('SNAP! score Player 1');
           this.player1Score++;
         } else {
@@ -69,11 +67,11 @@ Snap.prototype.play = async function () {
   process.exit(0);
 };
 
-// let cardsDeck = new CardsDeck();
-// let snap = new Snap(cardsDeck);
+let cardsDeck = new CardsDeck();
+let snap = new Snap(cardsDeck);
 
 
-let animalDeck = new AnimalDeck();
-let snap = new Snap(animalDeck);
+// let animalDeck = new AnimalDeck();
+// let snap = new Snap(animalDeck);
 
 snap.play();

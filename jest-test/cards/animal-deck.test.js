@@ -57,6 +57,13 @@ describe('AnimalDeck', function () {
       "ZEBRA"]);
   });
 
+  // test('deal function works', function() {
+  //   let animalDeck = new AnimalDeck();
+
+  //   let result = animalDeck.shuffle()
+  //   expect(result).toStrictEqual(true)
+  // })
+
   test('shuffle returns all cards in any order', function () {
     let animalDeck = new AnimalDeck();
     animalDeck.shuffle();
