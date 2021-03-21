@@ -9,7 +9,7 @@ class AnimalCard {
   }
 
   //same as getFormattedCard()
-  toString() {
+  formatCard() {
     return this.value.toString();
   }
 };

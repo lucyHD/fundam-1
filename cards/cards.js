@@ -11,7 +11,7 @@ class Card {
     this.suit = suit; //0 (clubs), 1 (diamonds), 2 (hearts), 3 (spades)
   }
 
-  toString() {
+  formatCard() {
     let cardNumber = 0;
 
     let faceValueName;
