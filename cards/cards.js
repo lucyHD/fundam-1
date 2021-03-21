@@ -11,7 +11,7 @@ class Card {
     this.suit = suit; //0 (clubs), 1 (diamonds), 2 (hearts), 3 (spades)
   }
 
-  getFormattedCard() {
+  toString() {
     let cardNumber = 0;
 
     let faceValueName;
@@ -81,15 +81,15 @@ class Card {
 
 class Deck {
   constructor() {
-    this.cards = []; //empty array of cards
-    // this.suits = [0, 1, 2, 3];
+    this.cards = [];
+    
     for (let suit = 0; suit < 4; suit++) {
       for (let value = 0; value < 13; value++) {
         const newCard = new Card(value, suit);
         //  this.cards[suit * 13 + faceValue] = newCard;
         //or
        
-        this.cards.push(newCard.getFormattedCard());
+        this.cards.push(newCard);
         
       }
     }
@@ -98,6 +98,9 @@ class Deck {
   getCards() {
     return this.cards;
   }
+ 
+
+
 
 
   shuffle() {

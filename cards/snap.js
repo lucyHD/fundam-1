@@ -1,4 +1,4 @@
-// const {AnimalDeck} = require('./animal-deck.js');
+const {AnimalDeck} = require('./animal-deck.js');
 const {CardsDeck} = require('./cards.js');  //this produces console.log of 'ace of hearts' or other card
 const readline = require('readline');
 
@@ -29,7 +29,7 @@ Snap.prototype.play = async function () {
     });
     rl.prompt();
     currentCard = this.deck.deal(); 
-    console.log(currentCard.value); //changed animal deck deal to return card.animal
+    console.log(currentCard.toString()); //changed animal deck deal to return card.animal
 
 
     for await (let line of rl) {
@@ -67,11 +67,11 @@ Snap.prototype.play = async function () {
   process.exit(0);
 };
 
-let cardsDeck = new CardsDeck();
-let snap = new Snap(cardsDeck);
+// let cardsDeck = new CardsDeck();
+// let snap = new Snap(cardsDeck);
 
 
-// let animalDeck = new AnimalDeck();
-// let snap = new Snap(animalDeck);
+let animalDeck = new AnimalDeck();
+let snap = new Snap(animalDeck);
 
 snap.play();
